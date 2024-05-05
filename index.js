@@ -49,7 +49,9 @@ app.get('/', (req, res) => {
   // Use 'sendFile' method to serve a static file, assuming '/home.html' is in the current directory
   res.sendFile(__dirname + '/home.html');
 });
-
+app.get('/about', (req, res) =>{
+  res.send('<h1>This is about page</h1>');
+})
 // Correct the 'listen' method and port number
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
