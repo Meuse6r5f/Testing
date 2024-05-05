@@ -43,6 +43,7 @@ const getDoc = async () => {
 
 const express = require('express'); // Correct import of Express
 const app = express(); // Initialize an Express app
+const port = process.env.PORT || 3000;
 
 // Define a route handler for the root route ('/')
 app.get('/', (req, res) => {
@@ -50,9 +51,9 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/home.html');
 });
 app.get('/about', (req, res) =>{
-  res.send('<h1>This is about page</h1>');
+  res.sendFile(__dirname + '/home.html');
 })
 // Correct the 'listen' method and port number
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log('Server is running on port 3000');
 });
